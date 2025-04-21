@@ -1,29 +1,33 @@
 name: .NET CI for Emby Plugin
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  push:    { branches: [ main ] }
+  pull_request: { branches: [ main ] }
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '6.0.x'
-      - name: Restore dependencies
-        run: dotnet restore
-      - name: Build project
-        run: dotnet build --configuration Release --no-restore
-      - name: Publish plugin
-        run: dotnet publish -c Release -o ./publish
-      - name: Upload plugin artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: emby-subdl-plugin
-          path: publish/
-          if-no-files-found: error
+    - uses: actions/checkout@v3
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore ./Emby.SubdlPlugin.csproj
+
+    - name: Build project
+      run: dotnet build ./Emby.SubdlPlugin.csproj --configuration Release --no-restore
+
+    - name: Publish plugin
+      run: dotnet publish ./Emby.SubdlPlugin.csproj -c Release -o ./publish
+
+    - name: Upload plugin artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: emby-subdl-plugin
+        path: publish/
+        if-no-files-found: error
