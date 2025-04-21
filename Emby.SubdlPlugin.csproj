@@ -6,9 +6,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- الأساس: نواة Emby -->
-      <PackageReference Include="MediaBrowser.Server.Core" Version="4.8.0.80" />
+      <PackageReference Include="MediaBrowser.Server.Core" Version="4.9.0.33" />
         <!-- الأنواع العامة: IHttpClient, BasePlugin… -->
-          <PackageReference Include="MediaBrowser.Common" Version="4.8.0.80" />
+          <PackageReference Include="MediaBrowser.Common" Version="4.9.0.33" />
             <!-- النموذج: BasePluginConfiguration, IXmlSerializer… -->
               <PackageReference Include="MediaBrowser.Model" Version="4.8.0.80" />
                 <!-- الواجهات الخاصة بالترجمات -->
