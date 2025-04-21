@@ -9,23 +9,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '6.0.x'      # أو أي إصدار داعم netstandard2.0
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build project
-      run: dotnet build --configuration Release --no-restore
-    - name: Test (if any)
-      run: dotnet test --no-build --verbosity normal
-    - name: Publish artifact
-      run: dotnet publish -c Release -o ./publish
-    - name: Upload build outputs
-      uses: actions/upload-artifact@v4
-      with:
-        name: emby-subdl-plugin
-        path: publish/
+      - uses: actions/checkout@v3
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build project
+        run: dotnet build --configuration Release --no-restore
+      - name: Publish plugin
+        run: dotnet publish -c Release -o ./publish
+      - name: Upload plugin artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: emby-subdl-plugin
+          path: publish/
+          if-no-files-found: error
