@@ -25,7 +25,7 @@ jobs:
     - name: Publish artifact
       run: dotnet publish -c Release -o ./publish
     - name: Upload build outputs
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: emby-subdl-plugin
         path: publish/
