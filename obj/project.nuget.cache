@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "dgSpecHash": "75t0nbhRTXo=",
+  "success": false,
+  "projectFilePath": "/workspaces/Emby-SubDL/Emby.SubdlPlugin.csproj",
+  "expectedPackageFiles": [
+    "/home/codespace/.nuget/packages/mediabrowser.common/4.8.0.80/mediabrowser.common.4.8.0.80.nupkg.sha512",
+    "/home/codespace/.nuget/packages/mediabrowser.server.core/4.8.0.80/mediabrowser.server.core.4.8.0.80.nupkg.sha512",
+    "/home/codespace/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/codespace/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package MediaBrowser.Model. No packages exist with this id in source(s): nuget.org",
+      "libraryId": "MediaBrowser.Model",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package MediaBrowser.Controller.Subtitles. No packages exist with this id in source(s): nuget.org",
+      "libraryId": "MediaBrowser.Controller.Subtitles",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

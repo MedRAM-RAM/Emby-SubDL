@@ -5,6 +5,13 @@
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="mediabrowser.server.core" Version="4.8.0.80" />
-  </ItemGroup>
+    <!-- الأساس: نواة Emby -->
+      <PackageReference Include="MediaBrowser.Server.Core" Version="4.8.0.80" />
+        <!-- الأنواع العامة: IHttpClient, BasePlugin… -->
+          <PackageReference Include="MediaBrowser.Common" Version="4.8.0.80" />
+            <!-- النموذج: BasePluginConfiguration, IXmlSerializer… -->
+              <PackageReference Include="MediaBrowser.Model" Version="4.8.0.80" />
+                <!-- الواجهات الخاصة بالترجمات -->
+                  <PackageReference Include="MediaBrowser.Controller.Subtitles" Version="4.8.0.80" />
+                  </ItemGroup>
 </Project>

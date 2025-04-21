@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Emby.SubdlPlugin
+build_property.ProjectDir = /workspaces/Emby-SubDL/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
